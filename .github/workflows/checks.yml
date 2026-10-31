@@ -367,7 +367,7 @@ jobs:
           MKL_NUM_THREADS: "1"
           # Worker count knob (this runner is 2-vCPU, so -n auto = 2). If swap
           # still can't hold peak memory, drop to "-n 1" or grow the swapfile.
-          XDIST_ARGS: "-n auto --dist loadscope"
+          XDIST_ARGS: "-n logical --dist loadscope"
       - name: Memory post-mortem
         # The tail-of-suite kills leave no cause in the step log; dmesg names
         # the killer (kernel OOM, systemd-oomd, or neither) for the next one.
